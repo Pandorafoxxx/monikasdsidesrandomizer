@@ -305,7 +305,7 @@ ASide:
     - Side: Left
       Idx: 1
       Kind: inout
-      HighBound: 19
+      HighBound: 21
     - Side: Up
       Idx: 17
       Kind: inout

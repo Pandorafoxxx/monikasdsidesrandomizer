@@ -1,0 +1,217 @@
+ASide:
+  - Room: a-01
+    Holes:
+    - Side: Left
+      Idx: 0
+      Kind: inout
+    - Side: Right
+      Idx: 0
+      Kind: inout
+  - Room: a-02
+    Holes:
+    - Side: Left
+      Idx: 0
+      Kind: inout
+    - Side: Up
+      Idx: 1
+      Kind: out
+      ReqOut:
+        Dashes: one
+  - Room: a-03
+    Holes:
+    - Side: Down
+      Idx: 0
+      Kind: in
+    - Side: Right
+      Idx: 0
+      Kind: out
+      ReqOut:
+        Dashes: one
+  - Room: a-04
+    Holes:
+    - Side: Left
+      Idx: 0
+      Kind: inout
+    - Side: Up
+      Idx: 0
+      Kind: inout
+    InternalEdges:
+    - Split: LeftToRight
+      ReqOut:
+        Dashes: one
+      ReqIn:
+        Or:
+        - Dashes: two
+          Difficulty: hard
+        - Dashes: one
+          Difficulty: expert
+    Tweaks:
+    - Name: "randomizer/ActivateSwitches"
+      Update:
+        Add: true
+        X: 496
+        Y: 0
+        Width: 32
+        Height: 24
+        Values:
+          type: "touchswitch"
+  - Room: a-05
+    Holes:
+    - Side: Down
+      Idx: 0
+      Kind: in
+    - Side: Up
+      Idx: 0
+      Kind: out
+      ReqOut:
+        Dashes: one
+  - Room: a-06
+    Holes:
+    - Side: Down
+      Idx: 1
+      Kind: in
+    - Side: Right
+      Idx: 0
+      Kind: out
+      ReqOut: 
+        Dashes: one
+  - Room: b-01
+    Holes:
+    - Side: Left
+      Idx: 0
+      Kind: in
+    - Side: Up
+      Idx: 0
+      Kind: out
+      ReqOut:
+        Dashes: one
+  - Room: b-02
+    Holes:
+    - Side: Down
+      Idx: 0
+      Kind: in
+    - Side: Right
+      Idx: 0
+      Kind: out
+      ReqOut:
+        Dashes: one
+  - Room: b-03
+    Holes:
+    - Side: Left
+      Idx: 0
+      Kind: in
+    - Side: Right
+      Idx: 0
+      Kind: out
+      ReqOut:
+        Dashes: one
+  - Room: b-04
+    Holes:
+    - Side: Left
+      Idx: 0
+      Kind: inout
+    - Side: Up
+      Idx: 0
+      Kind: inout
+    InternalEdges:
+    - Split: LeftToRight
+      ReqOut:
+        Dashes: one
+      ReqIn:
+        Dashes: two
+        Difficulty: master
+    Tweaks:
+    - Name: exitBlock
+      ID: 2693
+      Update:
+        Remove: true
+  - Room: c-01
+    Holes:
+    - Side: Down
+      Idx: 0
+      Kind: in
+    - Side: Up
+      Idx: 0
+      Kind: in
+    InternalEdges:
+    - To: "right"
+      ReqOut:
+        Or:
+        - Dashes: two
+        - Dashes: one
+          Difficulty: master
+    Subrooms:
+    - Room: "right"
+      Holes:
+      - Side: Up
+        Idx: 3
+        Kind: inout
+        ReqOut:
+          Dashes: one
+      - Side: Right
+        Idx: 0
+        Kind: inout
+  # im not going to configure c-01a and c-01b for now, c-01b requires a 9jump 2x anyway.
+  - Room: c-02
+    Holes:
+    - Side: Left
+      Idx: 0
+      Kind: in
+    - Side: Right
+      Idx: 0
+      Kind: out
+      ReqOut:
+        Dashes: one
+  - Room: c-03
+    Holes: 
+    - Side: Left
+      Idx: 0
+      Kind: in
+    - Side: Right
+      Idx: 0
+      Kind: out
+      ReqOut:
+        Dashes: one
+    - Side: Right
+      Idx: 1
+      Kind: out
+      ReqOut:
+        Dashes: one
+  - Room: c-04
+    ReqEnd:
+      Dashes: one
+    Holes:
+    - Side: Left
+      Idx: 1
+      Kind: in
+    InternalEdges:
+    - To: "secret"
+      ReqIn:
+        Dashes: one
+    Subrooms:
+    - Room: "secret"
+      Holes:
+      - Side: Left
+        Idx: 0
+        Kind: in
+      Collectables: 
+      - Idx: 0
+  - Room: c-04 # c-04 copy
+    Holes:
+    - Side: Left
+      Idx: 1
+      Kind: out
+      ReqOut:
+        Dashes: one
+        Difficulty: expert
+    Tweaks:
+    - Name: "blackGem"
+      ID: 85289
+      Update:
+        Values:
+          fake: true
+    - Name: "spawn"
+      ID: 78826
+      Update:
+        X: 568
+        Y: 120

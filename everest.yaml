@@ -1,0 +1,5 @@
+- Name: monikadsidesrandomizer
+  Version: 0.0.1
+  Dependencies:
+    - Name: Everest
+      Version: 1.5416.0

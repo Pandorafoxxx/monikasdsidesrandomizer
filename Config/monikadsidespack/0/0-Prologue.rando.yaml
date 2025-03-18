@@ -1,0 +1,24 @@
+ASide:
+  - Room: a-00
+    Holes:
+    - Side: Left
+      Idx: 0
+      Kind: inout
+    - Side: Right
+      Idx: 0
+      Kind: inout
+  - Room: a-01
+    Holes:
+    - Side: Left
+      Idx: 0
+      Kind: inout
+    - Side: Right
+      Idx: 0
+      Kind: inout
+  - Room: a-02 # todo: add dup
+    ReqEnd:
+      Difficulty: normal
+    Holes:
+    - Side: Left
+      Idx: 0
+      Kind: inout

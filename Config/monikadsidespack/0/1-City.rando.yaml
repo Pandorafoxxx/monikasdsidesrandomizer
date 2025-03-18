@@ -1,0 +1,370 @@
+ASide:
+  - Room: a-01
+    Holes:
+    - Side: Up
+      Idx: 8
+      Kind: out
+      ReqOut:
+        Dashes: one # probably possible but too much liftboost to do with climbhop strat.
+  - Room: a-02
+    Holes:
+    - Side: Down
+      Idx: 0
+      Kind: inout
+    - Side: Right
+      Idx: 0
+      Kind: inout
+    InternalEdges:
+    - Split: LeftToRight
+      ReqOut:
+        Dashes: one
+      ReqIn:
+        Or:
+        - Dashes: two
+        - Dashes: one
+          Difficulty: expert
+    Tweaks:
+    - Name: "jumpThru"
+      ID: 10992
+      Update:
+        Width: 16
+  - Room: a-03
+    Holes:
+    - Side: Left
+      Idx: 0
+      Kind: inout
+    - Side: Up
+      Idx: 3
+      Kind: inout
+    InternalEdges:
+    - Split: LeftToRight
+      ReqOut:
+        Dashes: one
+      ReqIn:
+        Or:
+        - Dashes: two
+          Difficulty: hard
+        - Dashes: one
+          Difficulty: expert
+        - Dashes: zero
+          Difficulty: perfect # reverse cpop should work
+    Tweaks:
+    - Name: "spawn"
+      Update:
+        Add: true
+        X: 256
+        Y: 24
+  - Room: a-04
+    Holes:
+    - Side: Down
+      Idx: 0
+      Kind: inout
+    - Side: Right
+      Idx: 0
+      Kind: inout
+    InternalEdges:
+    - Split: LeftToRight
+      ReqOut:
+        Dashes: one
+      ReqIn: 
+        Dashes: two 
+        Difficulty: master
+    Tweaks:
+    - Name: "jumpThru"
+      ID: 27649
+      Update:
+        Width: 16
+  - Room: a-05
+    Holes:
+    - Side: Left
+      Idx: 0
+      Kind: inout
+    - Side: Up
+      Idx: 7
+      Kind: inout
+    InternalEdges:
+    - Split: LeftToRight
+      ReqOut:
+        Or:
+        - Dashes: one
+        - Dashes: zero
+          Difficulty: expert
+      ReqIn:
+        Or:
+        - Dashes: two
+          Difficulty: expert
+        - Dashes: one
+          Difficulty: master
+    Tweaks:
+    - Name: "spawn"
+      Update:
+        Add: true
+        X: 288
+        Y: 24
+  - Room: a-06
+    Holes:
+    - Side: Down
+      Idx: 0
+      Kind: inout
+    - Side: Right
+      Idx: 0
+      Kind: inout
+    InternalEdges:
+    - Split: LeftToRight
+      ReqOut:
+        Or: 
+        - Dashes: one
+        - Dashes: zero
+          Difficulty: hard
+      ReqIn:
+        Dashes: one # 2x isnt really that much easier
+        Difficulty: expert
+    Tweaks:
+    - Name: "jumpThru"
+      ID: 43630
+      Update:
+        Width: 24
+  - Room: a-07
+    Holes:
+    - Side: Left
+      Idx: 0
+      Kind: inout
+    - Side: Right
+      Idx: 0
+      Kind: inout
+    InternalEdges:
+    - Split: LeftToRight
+      ReqOut:
+        Or:
+        - Dashes: one
+        - Dashes: zero
+          Difficulty: expert
+      ReqIn:
+        Dashes: one
+  - Room: b-01
+    Holes:
+    - Side: Left
+      Idx: 0
+      Kind: inout
+    InternalEdges:
+    - To: "right"
+      ReqOut:
+        Dashes: one
+      ReqIn:
+        Or:
+        - Dashes: two
+        - Dashes: one
+          Difficulty: expert
+    Subrooms:
+    - Room: "right"
+      Holes: 
+      - Side: Right
+        Idx: 0
+        Kind: inout
+      InternalEdges:
+      - To: "secret"
+        ReqOut:
+          Dashes: one
+        ReqIn:
+          Or:
+          - Dashes: one
+          - Dashes: zero
+            Difficulty: hard
+    - Room: "secret"
+      Holes:
+      - Side: Up
+        Idx: 5
+        Kind: inout
+  - Room: b-01b
+    ReqEnd:
+      Or:
+      - Dashes: one
+      - Dashes: zero
+        Difficulty: hard
+    Holes:
+    - Side: Down
+      Idx: 1
+      Kind: inout
+    Tweaks:
+    - Name: "cassette"
+      ID: 13
+      Update:
+        Remove: true
+    - Name: "blackGem"
+      Update:
+        Add: true
+        X: 156
+        Y: 112
+  - Room: b-01b # b-01b copy
+    Holes:
+    - Side: Down
+      Idx: 1
+      Kind: inout
+    - Side: Up
+      Idx: 6
+      Kind: inout
+    InternalEdges:
+    - Split: BottomToTop
+      ReqOut:
+        Dashes: one
+      ReqIn:
+        Dashes: one
+        Difficulty: expert
+    Tweaks:
+    - Name: "cassette"
+      ID: 13
+      Update:
+        Remove: true
+    - Name: "jumpThru"
+      ID: 34
+      Update:
+        Remove: true
+  - Room: b-01c
+    Holes:
+    - Side: Down
+      Idx: 6
+      Kind: inout # if this causes issues set to none
+    InternalEdges:
+    - Collectable: 0
+      ReqBoth:
+        Or:
+        - Dashes: two
+        - Dashes: one
+          Difficulty: expert
+  - Room: b-02
+    Holes:
+    - Side: Left
+      Idx: 0
+      Kind: in
+    - Side: Right
+      Idx: 0
+      Kind: out
+      ReqOut:
+        Dashes: one
+  - Room: b-03
+    Holes:
+    - Side: Left
+      Idx: 0
+      Kind: inout
+    - Side: Up
+      Idx: 3
+      Kind: inout
+    InternalEdges:
+    - Split: LeftToRight
+      ReqOut:
+        Dashes: one
+      ReqIn:
+        Or:
+        - Dashes: two
+        - Dashes: one
+          Difficulty: expert
+    Tweaks:
+    - Name: "spawn"
+      Update:
+        Add: true
+        X: 280
+        Y: 24
+  - Room: b-04
+    Holes:
+    - Side: Down
+      Idx: 1
+      Kind: in
+    - Side: Right
+      Idx: 0
+      Kind: out
+      ReqOut:
+        Dashes: one
+    Tweaks:
+    - Name: "jumpThru"
+      ID: 14875
+      Update:
+        Width: 24
+  - Room: b-05
+    Holes:
+    - Side: Left
+      Idx: 0
+      Kind: in
+    - Side: Right
+      Idx: 1
+      Kind: out
+      ReqOut:
+        Dashes: one
+      HighBound: 21
+    Tweaks:
+    - Name: "jumpThru" # this room exit is annoying.
+      Update:
+        Add: true
+        X: 1136
+        Y: 176
+        Width: 16
+  - Room: b-06
+    Holes:
+    - Side: Left
+      Idx: 1
+      Kind: inout
+      HighBound: 19
+    - Side: Up
+      Idx: 17
+      Kind: inout
+    InternalEdges:
+    - Split: LeftToRight
+      ReqOut:
+        Or:
+        - Dashes: one
+        - Dashes: zero 
+          Difficulty: perfect
+      ReqIn:
+        Dashes: two
+        Difficulty: expert
+    Tweaks:
+    - Name: "jumpThru"
+      Update:
+        Add: true
+        X: 0
+        Y: 176
+        Width: 16
+  - Room: b-07
+    Holes:
+    - Side: Down
+      Idx: 1
+      Kind: inout
+    - Side: Right
+      Idx: 0
+      Kind: inout
+    InternalEdges:
+    - Split: LeftToRight
+      ReqOut:
+        Or:
+        - Dashes: one
+        - Dashes: zero
+          Difficulty: perfect
+      ReqIn:
+        Or:
+        - Dashes: two
+          Difficulty: hard
+        - Dashes: one
+          Difficulty: expert
+    Tweaks:
+    - Name: "jumpThru"
+      ID: 12453
+      Update:
+        Width: 8
+  - Room: b-08
+    ReqEnd:
+      Dashes: one
+    Holes:
+    - Side: Left
+      Idx: 0
+      Kind: inout
+  - Room: b-08 # b-08 copy
+    Holes:
+    - Side: Left
+      Idx: 0
+      Kind: inout
+    Tweaks:
+    - Name: "blackGem"
+      ID: 32525
+      Update:
+        Values:
+          fake: true
+

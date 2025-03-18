@@ -65,7 +65,10 @@ ASide:
     InternalEdges:
     - Split: LeftToRight
       ReqOut:
-        Dashes: one
+        Or:
+        - Dashes: one
+        - Dashes: zero
+          Difficulty: hard
       ReqIn: 
         Dashes: two 
         Difficulty: master
@@ -361,10 +364,21 @@ ASide:
     - Side: Left
       Idx: 0
       Kind: inout
+      ReqOut:
+        Or:
+        - Dashes: two
+          Difficulty: expert
+        - Dashes: one
+          Difficulty: master
     Tweaks:
     - Name: "blackGem"
       ID: 32525
       Update:
         Values:
           fake: true
+    - Name: "spawn" # i'm just hoping this is the default spawn lol
+      ID: 17519
+      Update:
+        X: 1528
+        Y: 208
 
